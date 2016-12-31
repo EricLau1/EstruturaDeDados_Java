@@ -16,8 +16,7 @@ public class Estruturas {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-       Menu menu = new Menu();
-       // Fila fila = new Fila();
+        Menu menu = new Menu();
     }
     
 }

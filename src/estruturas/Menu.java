@@ -15,6 +15,7 @@ public final class Menu {
     
     private Pilha pilha;
     private Fila fila;
+    private Lista lista;
     
     public Menu(){
         boolean erro = true;
@@ -23,7 +24,7 @@ public final class Menu {
             while(erro){
                 try {
                     opcao = Integer.parseInt(JOptionPane.showInputDialog(null,"Estrutura de Dados\n\nEscolha uma opção:\n\n"
-                            + "1- Nova Pilha\n2- Nova Fila","Menu Principal",JOptionPane.DEFAULT_OPTION));
+                            + "1- Nova Pilha\n2- Nova Fila\n3- Nova Lista","Menu Principal",JOptionPane.DEFAULT_OPTION));
                     switch(opcao){
                         case(1):{
                             trataErro(this.pilha);
@@ -31,6 +32,10 @@ public final class Menu {
                         }
                         case(2):{
                             trataErro(this.fila);
+                            break;
+                        }
+                        case(3):{
+                            trataErro(this.lista);
                             break;
                         }
                         default:{
@@ -66,5 +71,13 @@ public final class Menu {
             }catch(Exception e){
               JOptionPane.showMessageDialog(null,"Valor Inválido!\n*todos os dados existentes foram triturados!");
             }
-    }    
+    }   
+    
+    private void trataErro(Lista l){
+        try{
+            l = new Lista();
+        }catch(Exception e){
+          JOptionPane.showMessageDialog(null,"Valor Inválido!\n*todos os dados existentes foram triturados!");  
+        }
+    }
 }
